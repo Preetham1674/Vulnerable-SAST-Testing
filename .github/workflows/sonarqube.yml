@@ -28,6 +28,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Test connection to SonarQube (ngrok)
+        run: |
+          echo "Checking if SonarQube is reachable..."
+          curl -I ${{ secrets.SONAR_HOST_URL }}
+
       - name: Download SonarScanner CLI
         run: |
           wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
