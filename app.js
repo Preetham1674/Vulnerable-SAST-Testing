@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
-  //Intentionally vulnerable: No input validation or authentication check 1
+  //Intentionally vulnerable: No input validation or authentication check
   if (username && password) {
     res.send(`<h1>Welcome, ${username}</h1>`);
   } else {
